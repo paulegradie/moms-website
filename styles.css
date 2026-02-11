@@ -389,13 +389,15 @@ h3 {
 }
 
 .gallery-card img.gallery-lady-center {
-  object-position: 50% center;
-  transform: scale(1.32);
+  object-position: center 8%;
+  transform: scale(1.2);
+  transform-origin: center top;
 }
 
 .gallery-card img.gallery-lady-right {
-  object-position: 96% center;
-  transform: scale(1.34);
+  object-position: center 10%;
+  transform: scale(1.2);
+  transform-origin: center top;
 }
 
 .about {
