@@ -33,6 +33,7 @@ jobs:
           cp styles.css _site/
           cp app.js _site/
           cp *.jpeg _site/ || true
+          cp *.png _site/ || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
