@@ -24,7 +24,7 @@ The package section now uses:
 
 Update `index.html` package config:
 
-- `data-price-per-person="95"` -> set your real per-person price
+- `data-price-per-person="65"` -> set your real per-person price
 - `data-square-link="https://square.link/u/REPLACE_WITH_YOUR_LINK"` -> set your real Square Payment Link
 
 Detailed setup steps are in:

@@ -24,7 +24,7 @@ const estimatedTotalEl = document.querySelector("#estimated-total");
 
 if (checkoutRoot && checkoutForm && partySizeSelect && perPersonPriceEl && estimatedTotalEl) {
   const rawPrice = Number(checkoutRoot.getAttribute("data-price-per-person"));
-  const perPersonPrice = Number.isFinite(rawPrice) ? rawPrice : 95;
+  const perPersonPrice = Number.isFinite(rawPrice) ? rawPrice : 65;
   const squareLink = checkoutRoot.getAttribute("data-square-link") ?? "";
   const currencyFormatter = new Intl.NumberFormat("en-US", {
     style: "currency",

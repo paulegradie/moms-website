@@ -6,7 +6,7 @@ Use this with the website group-size selector in `index.html`.
 
 1. In Square Dashboard, create an item named something like:
    - `Private Felting Session (Per Person)`
-2. Set a fixed per-person price (example: `$95.00`).
+2. Set a fixed per-person price (example: `$65.00`).
 3. This is your single per-person product.
 
 ## 2) Create One Payment Link
@@ -23,7 +23,7 @@ In `index.html`, update this block:
 ```html
 <div
   class="checkout-config"
-  data-price-per-person="95"
+  data-price-per-person="65"
   data-square-link="https://square.link/u/REPLACE_WITH_YOUR_LINK"
 >
 ```
