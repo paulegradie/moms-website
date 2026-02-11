@@ -377,6 +377,12 @@ h3 {
   display: block;
 }
 
+/* Shift collage crop to hide internal white divider lines in narrow card views. */
+.gallery-card img.gallery-collage-shift {
+  object-position: 18% center;
+  transform: scale(1.04);
+}
+
 .about {
   border: 1px solid #e8d4b8;
   border-radius: 28px;
