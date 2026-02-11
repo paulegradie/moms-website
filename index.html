@@ -139,13 +139,13 @@
 
     <section id="packages" class="package-section reveal">
       <p class="eyebrow">Book a Group Session</p>
-      <h2>Select 3-8 people and checkout in Stripe.</h2>
-      <p class="package-lead">Choose your group size below. We calculate your estimated total instantly from the per-person rate, then send you to secure Stripe checkout.</p>
+      <h2>Select 3-8 people and checkout in Square.</h2>
+      <p class="package-lead">Choose your group size below. We calculate your estimated total instantly from the per-person rate, then send you to secure Square checkout.</p>
 
       <div
         class="checkout-config"
         data-price-per-person="95"
-        data-stripe-link="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK"
+        data-square-link="https://square.link/u/REPLACE_WITH_YOUR_LINK"
       >
         <form id="group-checkout-form" class="checkout-form">
           <label for="party-size">Group Size</label>
@@ -161,20 +161,20 @@
           <p class="price-line">Per person: <strong id="per-person-price">$95.00</strong></p>
           <p class="price-line total-line">Estimated total: <strong id="estimated-total">$285.00</strong></p>
 
-          <button class="btn btn-primary" type="submit">Continue to Stripe</button>
+          <button class="btn btn-primary" type="submit">Continue to Square</button>
         </form>
 
         <article class="checkout-notes">
           <h3>What Happens Next</h3>
           <ul>
-            <li>Complete payment securely in Stripe.</li>
+            <li>Complete payment securely in Square.</li>
             <li>We follow up to schedule your preferred date/time.</li>
             <li>All materials are included for your group.</li>
           </ul>
         </article>
       </div>
 
-      <p class="package-note">Set your real Stripe payment link in `data-stripe-link` and per-person rate in `data-price-per-person` inside this section.</p>
+      <p class="package-note">Set your real Square payment link in `data-square-link` and per-person rate in `data-price-per-person` inside this section.</p>
     </section>
 
     <section class="steps reveal">

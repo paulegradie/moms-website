@@ -1,16 +1,14 @@
 # Setup TODO
 
-## 1) Stripe Product + Payment Link (3-8 People)
+## 1) Square Product + Payment Link (3-8 People)
 
-- [ ] Follow `STRIPE_PRODUCT_SETUP.md`.
-- [ ] Create one Stripe per-person product and one one-time price.
-- [ ] Create one Stripe Payment Link with adjustable quantity:
-  - [ ] Minimum quantity = `3`
-  - [ ] Maximum quantity = `8`
+- [ ] Follow `SQUARE_PRODUCT_SETUP.md`.
+- [ ] Create one Square per-person item with fixed per-person pricing.
+- [ ] Create one Square Payment Link for that item.
 - [ ] Update `index.html` package config:
   - [ ] `data-price-per-person`
-  - [ ] `data-stripe-link`
-- [ ] Confirm selector estimate matches Stripe checkout total.
+  - [ ] `data-square-link`
+- [ ] Confirm selector estimate matches checkout total.
 
 ## 2) Google Sheets
 

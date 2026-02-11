@@ -14,22 +14,22 @@ Static marketing site plus a lean payments backend:
 - `backend/`: TypeScript Lambda webhook service.
 - `infra/`: Terraform for AWS resources.
 
-## Frontend Setup (Stripe Selector: 3-8 People)
+## Frontend Setup (Square Selector: 3-8 People)
 
 The package section now uses:
 
-- One per-person Stripe product/price
+- One per-person Square product/price
 - A 3-8 people selector in `index.html`
 - Live total estimate in `app.js`
 
 Update `index.html` package config:
 
 - `data-price-per-person="95"` -> set your real per-person price
-- `data-stripe-link="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK"` -> set your real Stripe Payment Link
+- `data-square-link="https://square.link/u/REPLACE_WITH_YOUR_LINK"` -> set your real Square Payment Link
 
 Detailed setup steps are in:
 
-- `STRIPE_PRODUCT_SETUP.md`
+- `SQUARE_PRODUCT_SETUP.md`
 
 ## Backend Lambda Setup
 
@@ -77,12 +77,14 @@ You can also set `create_secret_versions = true` in tfvars and pass values, but 
 
 ## Square Configuration
 
-1. Create fixed products/packages in Square:
-   - `GROUP_1`, `GROUP_2`, `GROUP_4`, `GROUP_6`, `GROUP_8`
-2. Create one Payment Link for each package.
-3. Configure webhook endpoint to Terraform output `webhook_function_url`.
-4. Subscribe to payment events (recommend `payment.updated`).
-5. Use product names or references containing `GROUP_X` so party size maps correctly.
+1. Create one per-person product/item in Square.
+2. Create one Payment Link for that product/item.
+3. Update `index.html` package section:
+   - `data-price-per-person`
+   - `data-square-link`
+4. Configure webhook endpoint to Terraform output `webhook_function_url`.
+5. Subscribe to payment events (recommend `payment.updated`).
+6. If webhook rows show `UNMAPPED_PACKAGE`, confirm quantity/details are present in Square order payload.
 
 ## Google Sheets Configuration
 

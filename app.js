@@ -25,7 +25,7 @@ const estimatedTotalEl = document.querySelector("#estimated-total");
 if (checkoutRoot && checkoutForm && partySizeSelect && perPersonPriceEl && estimatedTotalEl) {
   const rawPrice = Number(checkoutRoot.getAttribute("data-price-per-person"));
   const perPersonPrice = Number.isFinite(rawPrice) ? rawPrice : 95;
-  const stripeLink = checkoutRoot.getAttribute("data-stripe-link") ?? "";
+  const squareLink = checkoutRoot.getAttribute("data-square-link") ?? "";
   const currencyFormatter = new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
@@ -44,16 +44,17 @@ if (checkoutRoot && checkoutForm && partySizeSelect && perPersonPriceEl && estim
 
   checkoutForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    if (!stripeLink || stripeLink.includes("REPLACE_WITH_YOUR_LINK")) {
-      alert("Add your Stripe payment link in the package section before checkout.");
+    if (!squareLink || squareLink.includes("REPLACE_WITH_YOUR_LINK")) {
+      alert("Add your Square payment link in the package section before checkout.");
       return;
     }
 
     const partySize = Number(partySizeSelect.value);
-    const checkoutUrl = new URL(stripeLink);
+    const checkoutUrl = new URL(squareLink);
     checkoutUrl.searchParams.set("utm_source", "wool-and-wonder-website");
     checkoutUrl.searchParams.set("utm_medium", "group-checkout");
     checkoutUrl.searchParams.set("utm_campaign", `group_size_${partySize}`);
+    checkoutUrl.searchParams.set("party_size", String(partySize));
 
     window.location.href = checkoutUrl.toString();
   });
