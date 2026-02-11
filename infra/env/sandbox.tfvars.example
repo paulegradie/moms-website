@@ -1,0 +1,10 @@
+aws_region   = "us-east-1"
+project_name = "moms-felting"
+environment  = "sandbox"
+
+google_sheet_id  = "YOUR_SANDBOX_GOOGLE_SHEET_ID"
+google_sheet_tab = "SandboxBookings"
+
+square_api_base_url = "https://connect.squareupsandbox.com"
+
+create_secret_versions = false

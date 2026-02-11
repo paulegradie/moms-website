@@ -1,0 +1,23 @@
+{
+  "name": "moms-website-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Square webhook Lambda for group-session purchase logging",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --format=cjs --outfile=dist/index.js --sourcemap",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.951.0",
+    "@aws-sdk/client-secrets-manager": "^3.951.0",
+    "@aws-sdk/lib-dynamodb": "^3.951.0",
+    "googleapis": "^150.0.1"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.152",
+    "@types/node": "^24.9.2",
+    "esbuild": "^0.25.11",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,6 @@
+backend/node_modules/
+backend/dist/
+infra/.terraform/
+infra/*.tfstate
+infra/*.tfstate.*
+infra/lambda-bundle.zip

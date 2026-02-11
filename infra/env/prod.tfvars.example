@@ -1,0 +1,13 @@
+aws_region   = "us-east-1"
+project_name = "moms-felting"
+environment  = "prod"
+
+# Required: Google spreadsheet ID where bookings are appended.
+google_sheet_id  = "YOUR_GOOGLE_SHEET_ID"
+google_sheet_tab = "Bookings"
+
+# Optional override if you name packages differently in Square.
+package_mapping_json = "{\"GROUP_1\":1,\"GROUP_2\":2,\"GROUP_4\":4,\"GROUP_6\":6,\"GROUP_8\":8}"
+
+# Keep false to avoid storing secret values in Terraform state.
+create_secret_versions = false
