@@ -378,9 +378,19 @@ h3 {
 }
 
 /* Shift collage crop to hide internal white divider lines in narrow card views. */
-.gallery-card img.gallery-collage-shift {
-  object-position: 18% center;
-  transform: scale(1.04);
+.gallery-card img.gallery-lady-left {
+  object-position: 12% center;
+  transform: scale(1.08);
+}
+
+.gallery-card img.gallery-lady-center {
+  object-position: 49% center;
+  transform: scale(1.1);
+}
+
+.gallery-card img.gallery-lady-right {
+  object-position: 86% center;
+  transform: scale(1.1);
 }
 
 .about {
