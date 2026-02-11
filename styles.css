@@ -197,6 +197,11 @@ h3 {
   display: block;
 }
 
+/* Hide embedded text in the hero image by shifting crop focus. */
+.hero-media img.hero-image-crop {
+  object-position: 72% 45%;
+}
+
 .hero-actions {
   margin-top: 0.2rem;
   display: flex;
