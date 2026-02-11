@@ -138,39 +138,43 @@
     </section>
 
     <section id="packages" class="package-section reveal">
-      <p class="eyebrow">Purchase a Session</p>
-      <h2>Choose your package size.</h2>
-      <p class="package-lead">Pay securely through Square. Once payment is complete, we coordinate your preferred session day/time manually to keep scheduling flexible.</p>
+      <p class="eyebrow">Book a Group Session</p>
+      <h2>Select 3-8 people and checkout in Stripe.</h2>
+      <p class="package-lead">Choose your group size below. We calculate your estimated total instantly from the per-person rate, then send you to secure Stripe checkout.</p>
 
-      <div class="package-grid">
-        <article class="package-card">
-          <h3>1 Person Session</h3>
-          <p>Perfect for solo makers who want focused guidance.</p>
-          <a class="btn btn-primary" href="https://square.link/u/REPLACE-GROUP-1">Buy 1 Person</a>
-        </article>
-        <article class="package-card">
-          <h3>2 People Session</h3>
-          <p>Great for date nights, friends, or parent + child creative time.</p>
-          <a class="btn btn-primary" href="https://square.link/u/REPLACE-GROUP-2">Buy 2 People</a>
-        </article>
-        <article class="package-card">
-          <h3>4 People Session</h3>
-          <p>Small-group creative session for families and friends.</p>
-          <a class="btn btn-primary" href="https://square.link/u/REPLACE-GROUP-4">Buy 4 People</a>
-        </article>
-        <article class="package-card">
-          <h3>6 People Session</h3>
-          <p>Ideal for birthdays, celebrations, and team experiences.</p>
-          <a class="btn btn-primary" href="https://square.link/u/REPLACE-GROUP-6">Buy 6 People</a>
-        </article>
-        <article class="package-card">
-          <h3>8 People Session</h3>
-          <p>Full private workshop format for larger groups.</p>
-          <a class="btn btn-primary" href="https://square.link/u/REPLACE-GROUP-8">Buy 8 People</a>
+      <div
+        class="checkout-config"
+        data-price-per-person="95"
+        data-stripe-link="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK"
+      >
+        <form id="group-checkout-form" class="checkout-form">
+          <label for="party-size">Group Size</label>
+          <select id="party-size" name="party_size">
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="5">5 people</option>
+            <option value="6">6 people</option>
+            <option value="7">7 people</option>
+            <option value="8">8 people</option>
+          </select>
+
+          <p class="price-line">Per person: <strong id="per-person-price">$95.00</strong></p>
+          <p class="price-line total-line">Estimated total: <strong id="estimated-total">$285.00</strong></p>
+
+          <button class="btn btn-primary" type="submit">Continue to Stripe</button>
+        </form>
+
+        <article class="checkout-notes">
+          <h3>What Happens Next</h3>
+          <ul>
+            <li>Complete payment securely in Stripe.</li>
+            <li>We follow up to schedule your preferred date/time.</li>
+            <li>All materials are included for your group.</li>
+          </ul>
         </article>
       </div>
 
-      <p class="package-note">Replace each `square.link` URL above with your real Square Payment Link for that package.</p>
+      <p class="package-note">Set your real Stripe payment link in `data-stripe-link` and per-person rate in `data-price-per-person` inside this section.</p>
     </section>
 
     <section class="steps reveal">

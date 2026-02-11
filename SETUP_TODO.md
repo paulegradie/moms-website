@@ -1,21 +1,16 @@
 # Setup TODO
 
-## 1) Square Products and Payment Links
+## 1) Stripe Product + Payment Link (3-8 People)
 
-- [ ] Create 5 Square products/packages with clear names:
-  - [ ] `GROUP_1` (1 person)
-  - [ ] `GROUP_2` (2 people)
-  - [ ] `GROUP_4` (4 people)
-  - [ ] `GROUP_6` (6 people)
-  - [ ] `GROUP_8` (8 people)
-- [ ] Create one Square Payment Link per package.
-- [ ] Replace placeholder URLs in `index.html`:
-  - [ ] `REPLACE-GROUP-1`
-  - [ ] `REPLACE-GROUP-2`
-  - [ ] `REPLACE-GROUP-4`
-  - [ ] `REPLACE-GROUP-6`
-  - [ ] `REPLACE-GROUP-8`
-- [ ] In Square, ensure package labels include `GROUP_X` format so webhook mapping is reliable.
+- [ ] Follow `STRIPE_PRODUCT_SETUP.md`.
+- [ ] Create one Stripe per-person product and one one-time price.
+- [ ] Create one Stripe Payment Link with adjustable quantity:
+  - [ ] Minimum quantity = `3`
+  - [ ] Maximum quantity = `8`
+- [ ] Update `index.html` package config:
+  - [ ] `data-price-per-person`
+  - [ ] `data-stripe-link`
+- [ ] Confirm selector estimate matches Stripe checkout total.
 
 ## 2) Google Sheets
 
@@ -86,4 +81,4 @@
 - [ ] Update contact email in `index.html`.
 - [ ] Update city/state in footer.
 - [ ] Add real Instagram/website links in `index.html`.
-- [ ] Review pricing copy on each package card for clarity.
+- [ ] Review selector copy and per-person pricing language for clarity.

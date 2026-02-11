@@ -14,17 +14,22 @@ Static marketing site plus a lean payments backend:
 - `backend/`: TypeScript Lambda webhook service.
 - `infra/`: Terraform for AWS resources.
 
-## Frontend Setup
+## Frontend Setup (Stripe Selector: 3-8 People)
 
-Edit package purchase links in `index.html` section `#packages`:
+The package section now uses:
 
-- `https://square.link/u/REPLACE-GROUP-1`
-- `https://square.link/u/REPLACE-GROUP-2`
-- `https://square.link/u/REPLACE-GROUP-4`
-- `https://square.link/u/REPLACE-GROUP-6`
-- `https://square.link/u/REPLACE-GROUP-8`
+- One per-person Stripe product/price
+- A 3-8 people selector in `index.html`
+- Live total estimate in `app.js`
 
-Replace each with the real Square Payment Link URL for that package.
+Update `index.html` package config:
+
+- `data-price-per-person="95"` -> set your real per-person price
+- `data-stripe-link="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK"` -> set your real Stripe Payment Link
+
+Detailed setup steps are in:
+
+- `STRIPE_PRODUCT_SETUP.md`
 
 ## Backend Lambda Setup
 
