@@ -27,7 +27,7 @@
       <a href="#home">Home</a>
       <a href="#classes">Classes</a>
       <a href="#experience">Experience</a>
-      <a href="#packages">Buy</a>
+      <a href="#packages">Book</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -40,13 +40,13 @@
         <h1>Felt with heart.<br>Learn with calm.</h1>
         <p class="lead">Private and small-group felting sessions for beginners through experienced makers. Slow down, create with your hands, and leave with beautiful finished work.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#packages">Purchase a Session</a>
+          <a class="btn btn-primary" href="#packages">Book a Session</a>
           <a class="btn btn-ghost" href="#classes">Explore Class Types</a>
         </div>
         <ul class="hero-points">
           <li>All materials included</li>
           <li>Group-friendly packages</li>
-          <li>Manual scheduling after purchase</li>
+          <li>Live calendar blocks double-booking</li>
         </ul>
       </div>
       <div class="hero-media">
@@ -86,10 +86,10 @@
       <article class="card">
         <p class="card-tag">Private</p>
         <h2>Family and Group Sessions</h2>
-        <p>Book one session for your group size and schedule directly with the studio after checkout.</p>
+        <p>Book your group session directly in the live Square calendar and choose an open time instantly.</p>
         <ul>
           <li>Great for birthdays and team events</li>
-          <li>Packages for 1, 2, 4, 6, or 8 people</li>
+          <li>Packages for 3-8 people</li>
           <li>Custom themes available</li>
         </ul>
       </article>
@@ -153,61 +153,64 @@
     </section>
 
     <section id="packages" class="package-section reveal">
-      <p class="eyebrow">Book a Group Session</p>
-      <h2>Select 3-8 people and checkout in Square.</h2>
-      <p class="package-lead">Choose your group size below. We calculate your estimated total instantly from the per-person rate, then send you to secure Square checkout.</p>
+      <p class="eyebrow">Live Booking</p>
+      <h2>Transparent pricing + real-time Square calendar.</h2>
+      <p class="package-lead">Pick your group size, then choose an open time in Square Appointments. Unavailable times are blocked automatically so no one can double-book.</p>
 
       <div
-        class="checkout-config"
-        data-price-per-person="65"
-        data-square-link="https://square.link/u/REPLACE_WITH_YOUR_LINK"
+        class="booking-layout"
+        data-square-booking-url="https://squareup.com/appointments/book/REPLACE_WITH_YOUR_SITE"
       >
-        <form id="group-checkout-form" class="checkout-form">
-          <label for="party-size">Group Size</label>
-          <select id="party-size" name="party_size">
-            <option value="3">3 people</option>
-            <option value="4">4 people</option>
-            <option value="5">5 people</option>
-            <option value="6">6 people</option>
-            <option value="7">7 people</option>
-            <option value="8">8 people</option>
-          </select>
-
-          <p class="price-line">Per person: <strong id="per-person-price">$65.00</strong></p>
-          <p class="price-line total-line">Estimated total: <strong id="estimated-total">$195.00</strong></p>
-
-          <button class="btn btn-primary" type="submit">Continue to Square</button>
-        </form>
-
-        <article class="checkout-notes">
-          <h3>What Happens Next</h3>
-          <ul>
-            <li>Complete payment securely in Square.</li>
-            <li>We follow up to schedule your preferred date/time.</li>
-            <li>All materials are included for your group.</li>
+        <article class="pricing-panel">
+          <h3>Group Session Pricing</h3>
+          <p class="pricing-meta">$65 per person | all materials included</p>
+          <ul class="price-list" aria-label="Group session totals">
+            <li><span>3 people</span><strong>$195</strong></li>
+            <li><span>4 people</span><strong>$260</strong></li>
+            <li><span>5 people</span><strong>$325</strong></li>
+            <li><span>6 people</span><strong>$390</strong></li>
+            <li><span>7 people</span><strong>$455</strong></li>
+            <li><span>8 people</span><strong>$520</strong></li>
           </ul>
+          <p class="pricing-footnote">Need 1:1 private lessons or a custom event size? Use the contact section and we will open a custom booking option.</p>
         </article>
+
+        <div class="booking-stack">
+          <article class="booking-panel">
+            <p class="booking-tag">Square Appointments</p>
+            <h3>Open the live calendar</h3>
+            <p>Choose your service, date, and time. Confirmation happens instantly in Square.</p>
+            <a
+              id="square-booking-btn"
+              class="btn btn-primary booking-btn"
+              href="https://squareup.com/appointments/book/REPLACE_WITH_YOUR_SITE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Book in Square</a>
+            <p class="booking-help">Prefer a custom request first? <a href="mailto:hello@woolandwonderstudio.com">Email the studio</a>.</p>
+          </article>
+
+          <article class="checkout-notes">
+            <h3>Booking Flow</h3>
+            <ol class="next-steps">
+              <li>
+                <h4>Select your group size</h4>
+                <p>Use pricing above to choose the right package.</p>
+              </li>
+              <li>
+                <h4>Choose from open slots</h4>
+                <p>Square only shows available times to prevent overlaps.</p>
+              </li>
+              <li>
+                <h4>Get instant confirmation</h4>
+                <p>You will receive your booking confirmation as soon as checkout is complete.</p>
+              </li>
+            </ol>
+          </article>
+        </div>
       </div>
 
-      <p class="package-note">Set your real Square payment link in `data-square-link` and per-person rate in `data-price-per-person` inside this section.</p>
-    </section>
-
-    <section class="steps reveal">
-      <p class="eyebrow">How It Works</p>
-      <div class="steps-grid">
-        <article>
-          <h3>1. Choose Package</h3>
-          <p>Pick a group size that matches your people count.</p>
-        </article>
-        <article>
-          <h3>2. Pay with Square</h3>
-          <p>Complete checkout securely with card payment.</p>
-        </article>
-        <article>
-          <h3>3. Schedule Manually</h3>
-          <p>We connect with you directly to lock in your best session time.</p>
-        </article>
-      </div>
+      <p class="package-note">Set your real Square Appointments booking URL in `data-square-booking-url` and on the `#square-booking-btn` link inside this section.</p>
     </section>
 
     <section id="faq" class="faq reveal">
@@ -219,8 +222,8 @@
           <p>No. Beginners are welcome. Instruction is step-by-step and materials are provided.</p>
         </article>
         <article>
-          <h3>How does scheduling work after payment?</h3>
-          <p>After purchase, we follow up to confirm your preferred date and time window.</p>
+          <h3>How does scheduling work?</h3>
+          <p>You choose an available date and time in our live Square calendar. Booked times are automatically blocked.</p>
         </article>
         <article>
           <h3>Can I request a custom class theme?</h3>
@@ -230,7 +233,7 @@
     </section>
 
     <section id="contact" class="cta reveal">
-      <h2>Questions before purchasing?</h2>
+      <h2>Questions before booking?</h2>
       <p>Email for custom requests, events, private group ideas, and scheduling needs.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="mailto:hello@woolandwonderstudio.com">Email the Studio</a>

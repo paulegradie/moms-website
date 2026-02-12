@@ -16,46 +16,35 @@ revealItems.forEach((item, index) => {
   observer.observe(item);
 });
 
-const checkoutRoot = document.querySelector(".checkout-config");
-const checkoutForm = document.querySelector("#group-checkout-form");
-const partySizeSelect = document.querySelector("#party-size");
-const perPersonPriceEl = document.querySelector("#per-person-price");
-const estimatedTotalEl = document.querySelector("#estimated-total");
+const bookingRoot = document.querySelector(".booking-layout");
+const bookingButton = document.querySelector("#square-booking-btn");
 
-if (checkoutRoot && checkoutForm && partySizeSelect && perPersonPriceEl && estimatedTotalEl) {
-  const rawPrice = Number(checkoutRoot.getAttribute("data-price-per-person"));
-  const perPersonPrice = Number.isFinite(rawPrice) ? rawPrice : 65;
-  const squareLink = checkoutRoot.getAttribute("data-square-link") ?? "";
-  const currencyFormatter = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    minimumFractionDigits: 2,
-  });
+if (bookingRoot && bookingButton) {
+  const configuredUrl = bookingRoot.getAttribute("data-square-booking-url") ?? "";
+  const configuredPlaceholder = configuredUrl.includes("REPLACE_WITH_YOUR_SITE");
 
-  const updateEstimate = () => {
-    const partySize = Number(partySizeSelect.value);
-    const total = perPersonPrice * partySize;
-    perPersonPriceEl.textContent = currencyFormatter.format(perPersonPrice);
-    estimatedTotalEl.textContent = currencyFormatter.format(total);
-  };
+  if (configuredUrl && !configuredPlaceholder) {
+    bookingButton.setAttribute("href", configuredUrl);
+  }
 
-  updateEstimate();
-  partySizeSelect.addEventListener("change", updateEstimate);
-
-  checkoutForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!squareLink || squareLink.includes("REPLACE_WITH_YOUR_LINK")) {
-      alert("Add your Square payment link in the package section before checkout.");
+  bookingButton.addEventListener("click", (event) => {
+    const activeHref = bookingButton.getAttribute("href") ?? "";
+    const activePlaceholder = activeHref.includes("REPLACE_WITH_YOUR_SITE");
+    if (!activeHref || configuredPlaceholder || activePlaceholder) {
+      event.preventDefault();
+      alert("Add your Square Appointments booking URL in the booking section before going live.");
       return;
     }
 
-    const partySize = Number(partySizeSelect.value);
-    const checkoutUrl = new URL(squareLink);
-    checkoutUrl.searchParams.set("utm_source", "wool-and-wonder-website");
-    checkoutUrl.searchParams.set("utm_medium", "group-checkout");
-    checkoutUrl.searchParams.set("utm_campaign", `group_size_${partySize}`);
-    checkoutUrl.searchParams.set("party_size", String(partySize));
-
-    window.location.href = checkoutUrl.toString();
+    try {
+      const bookingUrl = new URL(activeHref);
+      bookingUrl.searchParams.set("utm_source", "wool-and-wonder-website");
+      bookingUrl.searchParams.set("utm_medium", "square-appointments");
+      bookingUrl.searchParams.set("utm_campaign", "live-booking");
+      bookingButton.setAttribute("href", bookingUrl.toString());
+    } catch {
+      event.preventDefault();
+      alert("Square booking URL is invalid. Update the booking section link.");
+    }
   });
 }
